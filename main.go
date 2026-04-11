@@ -687,6 +687,16 @@ func extractLocation(findings []Finding) string {
 
 func main() {
 	// ══════════════════════════════════════════════════════════════════════════
+	// MODE PARSER: Si activé, exécuter le parser WPScan au lieu du hook
+	// ══════════════════════════════════════════════════════════════════════════
+	if isParserMode() {
+		if err := runParser(); err != nil {
+			log.Fatalf("[FATAL] %v", err)
+		}
+		return
+	}
+
+	// ══════════════════════════════════════════════════════════════════════════
 	// ÉTAPE 1: Vérification de l'API au démarrage
 	// ══════════════════════════════════════════════════════════════════════════
 	if err := checkAPIHealth(); err != nil {

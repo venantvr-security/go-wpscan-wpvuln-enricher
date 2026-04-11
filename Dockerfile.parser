@@ -1,0 +1,29 @@
+# Dockerfile pour le WPScan Parser (Go)
+# Build: docker build -f Dockerfile.parser -t wpscan-parser:go .
+# Usage: docker run -e READ_FILE=/data/input.json -e WRITE_FILE=/data/output.json -v /path:/data wpscan-parser:go
+
+FROM golang:1.21-alpine AS builder
+
+WORKDIR /app
+
+# Copier les fichiers source
+COPY go.mod ./
+COPY main.go parser.go ./
+
+# Compiler en mode parser
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /parser .
+
+# Image finale minimale
+FROM alpine:3.19
+
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /app
+
+COPY --from=builder /parser /app/parser
+
+# Variables d'environnement par défaut
+ENV PARSER_MODE=true
+
+# Point d'entrée
+ENTRYPOINT ["/app/parser"]
