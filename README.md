@@ -3,6 +3,13 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/venantvr-security/go-wpscan-wpvuln-enricher)
 [![API Version](https://img.shields.io/badge/WPVulnerability%20API-2024--01-green.svg)](https://www.wpvulnerability.net/api/plugins/)
 [![Go](https://img.shields.io/badge/Go-1.22+-00ADD8.svg)](https://go.dev/)
+[![Docker](https://img.shields.io/badge/Docker-ghcr.io-blue.svg)](https://ghcr.io/venantvr-security/go-wpscan-wpvuln-enricher)
+
+## Docker Image
+
+```bash
+docker pull ghcr.io/venantvr-security/go-wpscan-wpvuln-enricher:latest
+```
 
 A secureCodeBox hook that enriches WPScan findings with known vulnerability data from the [WPVulnerability API](https://www.wpvulnerability.net/).
 
