@@ -18,7 +18,7 @@ WORKDIR /work
 COPY go.mod ./
 
 # Copier le code source et les tests
-COPY main.go parser.go main_test.go ./
+COPY main.go parser.go main_test.go parser_test.go ./
 
 # Exécuter les tests unitaires pendant le build
 # Si un test échoue, le build échoue (fail-fast)
