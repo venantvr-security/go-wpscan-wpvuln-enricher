@@ -1,0 +1,37 @@
+# Binaires compilés
+go-wpscan-wpvuln-enricher
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Fichiers de test
+*.test
+*.out
+coverage.html
+coverage.txt
+
+# Dépendances (vendoring)
+vendor/
+
+# Fichiers IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Fichiers OS
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires
+*.tmp
+*.log
+tmp/
+
+# Fichiers de findings (données de test locales)
+findings.json
+enriched-findings.json
+*.findings.json

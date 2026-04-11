@@ -1,0 +1,861 @@
+[
+  {
+    "id": "wpscan-001",
+    "name": "Plugin: updraftplus",
+    "description": "WordPress plugin UpdraftPlus detected",
+    "category": "WordPress Plugin",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "INFORMATIONAL",
+    "attributes": {
+      "slug": "updraftplus",
+      "version": "1.23.0"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "wpscan-002",
+    "name": "Plugin: contact-form-7",
+    "description": "WordPress plugin Contact Form 7 detected",
+    "category": "WordPress Plugin",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "INFORMATIONAL",
+    "attributes": {
+      "slug": "contact-form-7",
+      "version": "5.7.0"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "wpscan-003",
+    "name": "WordPress Version 6.4.2",
+    "description": "WordPress core version detected",
+    "category": "WordPress Core",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "INFORMATIONAL",
+    "attributes": {
+      "version": "6.4.2"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "9c82cb1c-3bb0-4c22-ac9a-7078dfcc3db9",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 5.3.2",
+    "description": "Contact Form 7 [contact-form-7] \u003c 5.3.2 (fixed in 5.3.2)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-434"
+      ],
+      "fixed_in": "5.3.2",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2020-35489",
+        "https://wpscan.com/vulnerability/7391118e-eef5-4ff8-a8ea-f6b65f442c63",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-531-arbitrary-file-upload-via-bypass"
+      ],
+      "wpvuln_id": "69f4e580612c835bfea455eb87c0aa010b02c26489b2edccc6a5d9b1154113dc"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "edfd3f32-8789-441d-b86b-74bdab595877",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 5.0.4",
+    "description": "Contact Form 7 [contact-form-7] \u003c 5.0.4 (fixed in 5.0.4)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "5.0.4",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2018-20979",
+        "https://wpscan.com/vulnerability/af945f64-9ce2-485c-bf36-c2ff59dc10d5",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-503-authorization-bypass"
+      ],
+      "wpvuln_id": "bf43a61e8ad7b51c20303b493f392c94d4556dceedb663862e26bc996b3caaab"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "636ac59d-bb1a-4184-8290-84c861f64572",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 3.7.2",
+    "description": "Contact Form 7 [contact-form-7] \u003c 3.7.2 (fixed in 3.7.2)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "3.7.2",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2014-2265",
+        "https://wpscan.com/vulnerability/3020e3f1-162f-48f9-ace3-7ba1c7c6b164",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-372-captcha-bypass"
+      ],
+      "wpvuln_id": "3c4ccb483b1049f636129809d84406a1d850028713ec77b6ceebbce9780c558d"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "cb9c15f7-b8b5-4936-aa74-5106231f538c",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 5.3.2",
+    "description": "Contact Form 7 [contact-form-7] \u003c 5.3.2 (fixed in 5.3.2)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "5.3.2",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/contact-form-7/vulnerability/wordpress-contact-form-7-plugin-5-3-1-unrestricted-file-upload-vulnerability"
+      ],
+      "wpvuln_id": "a26423547b6bf8c59ad7d7259609e22c14f3bea37232df4091c06e8be64583df"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "5aaeed1d-426d-4fdc-96fa-9188908eccc7",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 5.0.4",
+    "description": "Contact Form 7 [contact-form-7] \u003c 5.0.4 (fixed in 5.0.4)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "5.0.4",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/contact-form-7/vulnerability/wordpress-contact-form-7-plugin-5-0-3-privilege-escalation-vulnerability"
+      ],
+      "wpvuln_id": "46ad0a1e402e2b7fd43755090d353ebeeef7500e6ea531a129546012fed0ba84"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "4e05687b-66db-44f9-80d1-f42f17714ddb",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 3.5.3",
+    "description": "Contact Form 7 [contact-form-7] \u003c 3.5.3 (fixed in 3.5.3)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "3.5.3",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/contact-form-7/vulnerability/wordpress-contact-form-7-plugin-3-5-2-remote-code-execution"
+      ],
+      "wpvuln_id": "9d84ac5c78b3931440854e014d7f5444668ef9f58171f7cb7392833f78b96aaf"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "884061db-f47c-4f93-86d0-c9a70379c209",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 3.5.3",
+    "description": "Contact Form 7 [contact-form-7] \u003c 3.5.3 (fixed in 3.5.3)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "3.5.3",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://wpscan.com/vulnerability/f307ec17-da98-424f-b784-7cb63351aa8e"
+      ],
+      "wpvuln_id": "e68302ed99524f2a42d35ae8cf1b9b475db83d7d686c3ba6f942747f6640c39e"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "66538326-bef1-46fe-937c-aa43280d2847",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 3.5.3",
+    "description": "Contact Form 7 [contact-form-7] \u003c 3.5.3 (fixed in 3.5.3)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "3.5.3",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-352-arbitrary-file-upload"
+      ],
+      "wpvuln_id": "3813397954443988db06a5d3c876604f2c139e81b316ef768e4d21c87d794c11"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "f1b60aba-fd8e-4f4e-a23b-7311f6a888a1",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 5.8.4",
+    "description": "Contact Form 7 [contact-form-7] \u003c 5.8.4 (fixed in 5.8.4)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cvss_score": "6.6",
+      "cwe": [
+        "CWE-434"
+      ],
+      "fixed_in": "5.8.4",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2023-6449",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-583-authenticated-editor-arbitrary-file-upload",
+        "https://patchstack.com/database/wordpress/plugin/contact-form-7/vulnerability/wordpress-contact-form-7-plugin-5-8-3-authenticated-editor-arbitrary-file-upload-vulnerability",
+        "https://wpscan.com/vulnerability/70e21d9a-b1e6-4083-bcd3-7c1c13fd5382"
+      ],
+      "wpvuln_id": "3f3e7cdb5d815edb66f209dbb269f42df26ad83d9d3a69c7c3c4da5fce561d6d"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "5ffa2369-138a-46ca-aae8-a831150287c6",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 5.9.2",
+    "description": "Contact Form 7 [contact-form-7] \u003c 5.9.2 (fixed in 5.9.2)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cvss_score": "6.1",
+      "cwe": [
+        "CWE-79"
+      ],
+      "fixed_in": "5.9.2",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2024-2242",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-59-reflected-cross-site-scripting",
+        "https://patchstack.com/database/wordpress/plugin/contact-form-7/vulnerability/wordpress-contact-form-7-plugin-5-9-reflected-cross-site-scripting-vulnerability",
+        "https://wpscan.com/vulnerability/1c070a2c-2ab0-43bf-b10b-6575709918bc"
+      ],
+      "wpvuln_id": "f2293632631341a14596411858137750d6f77619f8f2bfdab04b9f95536a26e5"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "3f8953e1-959f-435c-91e2-9c777af08582",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 5.9.5",
+    "description": "Contact Form 7 [contact-form-7] \u003c 5.9.5 (fixed in 5.9.5)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-601"
+      ],
+      "fixed_in": "5.9.5",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2024-4704",
+        "https://patchstack.com/database/wordpress/plugin/contact-form-7/vulnerability/wordpress-contact-form-7-plugin-5-9-5-unauthenticated-open-redirect-vulnerability",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-594-unauthenticated-open-redirect"
+      ],
+      "wpvuln_id": "11deabaaffc704bdad7665508e0dd88de89a9b330115fdb1718a72104c302b1d"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "4abeaf16-9a09-4ac1-9c17-c0da14923fce",
+    "name": "[WPVuln] Contact Form 7 — Contact Form 7 [contact-form-7] \u003c 6.0.6",
+    "description": "Contact Form 7 [contact-form-7] \u003c 6.0.6 (fixed in 6.0.6)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "6.0.6",
+      "plugin_name": "Contact Form 7",
+      "plugin_slug": "contact-form-7",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2025-3247",
+        "https://patchstack.com/database/wordpress/plugin/contact-form-7/vulnerability/wordpress-contact-form-7-plugin-6-0-5-order-replay-vulnerability",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/contact-form-7/contact-form-7-605-order-replay-vulnerability",
+        "https://euvd.enisa.europa.eu/enisa/EUVD-2025-11473"
+      ],
+      "wpvuln_id": "73774b9b6ea1f06523fcd9a5e4c8ca309bc1cc031a3e2862e0d3ad7986b1bd2c"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "e6cdbc7f-db45-4f10-b2bb-6aa508ce7014",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.22.3",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.22.3 (fixed in 1.22.3)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-863"
+      ],
+      "fixed_in": "1.22.3",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2022-0633",
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-22-1-arbitrary-backup-downloads-vulnerability",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/detail/updraftplus-wordpress-backup-plugin-1223-sensitive-information-disclosure",
+        "https://wpscan.com/vulnerability/d257c28f-3c7e-422b-a5c2-e618ed3c0bf3"
+      ],
+      "wpvuln_id": "73e83c465328e538f95fe05937eeec6ceb516207e1d1d250e2e8c18cbeaab902"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "ced7ac51-0dd2-448b-a52a-c42776844286",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.69",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.69 (fixed in 1.16.69)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-79"
+      ],
+      "fixed_in": "1.16.69",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2021-25089",
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-16-66-reflected-cross-site-scripting-xss-vulnerability",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-wordpress-backup-plugin-11668-reflected-cross-site-scripting-via-updraft-restore",
+        "https://wpscan.com/vulnerability/5adb977e-f7bf-4d36-b625-87bc23d379c8"
+      ],
+      "wpvuln_id": "649c62238f4e2b5348c4a03bb35d03b293de432d553f1589a5775633ddeef779"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "c181fd70-faa5-4cfd-a5c3-a385689ad221",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.6.59",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.6.59 (fixed in 1.6.59)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-79"
+      ],
+      "fixed_in": "1.6.59",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2021-24423",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-wordpress-backup-plugin-1659-stored-cross-site-scripting",
+        "https://wpscan.com/vulnerability/541974d6-2df8-4497-9aee-afd3b9024102"
+      ],
+      "wpvuln_id": "d395f2171bbf7946a92bba818e078655ee9f203c461a813b0966cf520b0a6114"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "1ff8771f-f55d-40aa-852c-2dca09d0f53c",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.66",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.66 (fixed in 1.16.66)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-79"
+      ],
+      "fixed_in": "1.16.66",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2021-25022",
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-16-65-reflected-cross-site-scripting-xss-vulnerability",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-wordpress-backup-plugin-11665-reflected-cross-site-scripting",
+        "https://wpscan.com/vulnerability/1801c7ae-2b5c-493f-969d-4bb19a9feb15"
+      ],
+      "wpvuln_id": "da4e6ebe777c2d6656ee15aa85c2501b852ebd0ce2ecc08551366cf9952a24f1"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "108ef227-a01c-4f6e-bf85-f2967be1f9c9",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.64",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.64 (fixed in 1.9.64)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-79"
+      ],
+      "fixed_in": "1.9.64",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2015-9360",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/detail/updraftplus-1963-and-updraftplus-paid-2963-cross-site-scripting"
+      ],
+      "wpvuln_id": "56d693c15c6e2dc8f57c5a7e36dae528fa80fa52e8f3002aaea61c5f78dea82a"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "b81a2ed1-529a-49e5-b5d6-01a79b5dd5e7",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.13.5",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.13.5 (fixed in 1.13.5)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-79"
+      ],
+      "fixed_in": "1.13.5",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2017-18593",
+        "https://wpscan.com/vulnerability/6864a33e-9ba9-4584-b1ac-dd8a793bdb53",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-1134-stored-cross-site-scripting"
+      ],
+      "wpvuln_id": "41e2cab8c8b992073c441eea2de7fa86484b04d08b76d17c80f21a8b802c992b"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "03ef5ee6-e759-418d-af22-ccb25f1b64f5",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c= 1.13.12",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c= 1.13.12 (fixed in 1.13.12)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-94"
+      ],
+      "fixed_in": "1.13.12",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2017-16871"
+      ],
+      "wpvuln_id": "095beee3051762b42db623c24a4f8528eacdf8c1335d7154e63cc71634aafe29"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "e0e892da-9338-4fec-b7a2-2598ce5eb122",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c= 1.13.12",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c= 1.13.12 (fixed in 1.13.12)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-918"
+      ],
+      "fixed_in": "1.13.12",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2017-16870"
+      ],
+      "wpvuln_id": "bfbf1cd1052c76613aa0d522ad0aec142b654ef4a956961862533b5f26205a0a"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "854a2b85-87b8-4289-ae5f-a50593e38fbd",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.22.9",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.22.9 (fixed in 1.22.9)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cwe": [
+        "CWE-79"
+      ],
+      "fixed_in": "1.22.9",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2022-0864",
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-22-8-reflected-cross-site-scripting-xss-vulnerability",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-wordpress-backup-plugin-1229-reflected-cross-site-scripting",
+        "https://wpscan.com/vulnerability/7337543f-4c2c-4365-aebf-3423e9d2f872"
+      ],
+      "wpvuln_id": "f046d3a71e6cf72ca6b4bbc71a813bdd5e9fd3e845ab223240eb981b21ba1f53"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "a2631932-b483-4a66-a261-bd1cc971e7f7",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.59",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.59 (fixed in 1.16.59)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.16.59",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-16-58-local-file-inclusion-lfi-vulnerability"
+      ],
+      "wpvuln_id": "7f8882fa1949e0aa6bd460b2464249c15ac7bf1dfca40b7493e64efc47368c89"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "634c21e4-d275-4947-86f4-1303c631e17d",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.51",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.51 (fixed in 1.9.51)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.9.51",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-9-50-privilege-escalation"
+      ],
+      "wpvuln_id": "cb1d77d83774be372f8690a0dc6c571803539fc1982333ff902bd9ef3ae88993"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "71e4be9a-2742-4026-867c-9e91ea5b9b55",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.6.4",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.6.4 (fixed in 1.9.6.4)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.9.6.4",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-backup-restoration-plugin-1-9-6-3-cross-site-scripting"
+      ],
+      "wpvuln_id": "98fe49343dfe4548988db9d233d7eda2d4d2ad72a57797987665b19c5b4757c9"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "d84af4e8-62f7-4a28-88e9-aec53ab46de7",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.59",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.59 (fixed in 1.16.59)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.16.59",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-11659-authenticated-admin-local-file-inclusion"
+      ],
+      "wpvuln_id": "4fbde90bf1ca73ea270c0451bdc41a565aa585d98120f6f04b5c88b76d7b1ca2"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "03eba5e5-6a27-413f-b620-c2ff78b20380",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.59",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.16.59 (fixed in 1.16.59)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.16.59",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://wpscan.com/vulnerability/afac65c6-b67a-4bc4-876f-5610037de24e"
+      ],
+      "wpvuln_id": "29a474d946c0efb971799f5033826a1fd9ab909d59958d3995c57e3368df09b2"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "97e9babe-9c91-450f-a7bf-9bb74223cafb",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.6.4",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.6.4 (fixed in 1.9.6.4)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.9.6.4",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-wordpress-backup-1963-cross-site-scripting"
+      ],
+      "wpvuln_id": "92afc7a45f4d655557f1582a6384ada5bbfa06375348bdffae923d69e80c1ea6"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "a20aeefd-8cee-47a8-bfda-0cd427c34eee",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.51",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.9.51 (fixed in 1.9.51)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.9.51",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-wordpress-backup-plugin-1950-nonce-leak-to-authorization-bypass"
+      ],
+      "wpvuln_id": "48e52c8a0c821fdf656a8c4222d1a9aef957e1b389375da001c3c4d3eee11df6"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "7ace8a4c-a4c0-44b3-97e0-d1068916afe4",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.1",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.1 (fixed in 1.23.1)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.23.1",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraft-plus-12224-cross-site-request-forgery-via-updraft-ajaxrestore"
+      ],
+      "wpvuln_id": "b12b946beb1d62756a87e635ab59687742eaf4be01831bab7f1de8c3df978de6"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "52b7fc3a-8364-46cf-a463-9bd1c8b88066",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.1",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.1 (fixed in 1.23.1)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.23.1",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://patchstack.com/database/vulnerability/updraftplus/wordpress-updraft-plus-plugin-1-22-24-cross-site-request-forgery-vulnerability"
+      ],
+      "wpvuln_id": "f024881a8f3076f8886cae313494a35502ef3f387950658b5448909bfe31fcee"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "ce30c6be-40b8-4857-949f-d94a5be30764",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003e= 1.22.14 - \u003c= 1.23.2",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003e= 1.22.14 - \u003c= 1.23.2 (fixed in 1.23.2)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.23.2",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraft-plus-12214-to-1232-privilege-escalation-via-updraft-central-ajax-handler"
+      ],
+      "wpvuln_id": "e92602f78438ccd59ab3ba0320b24854fae302821e7ba0bc85054a2ac67ceb7f"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "0a1c6ea1-d498-4a9e-b10f-94f53b8dcc2e",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003e= 1.22.14 - \u003c= 1.23.2",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003e= 1.22.14 - \u003c= 1.23.2 (fixed in 1.23.2)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.23.2",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-22-14-1-23-2-broken-access-control-vulnerability"
+      ],
+      "wpvuln_id": "8057ee50410dc4e1ecf90066c8a5d39ccd70c96dcbf5433ed77f9dc042ef0b1f"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "b229e794-c248-4c6f-b193-f2e8d5f441c8",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003e= 2.22.14 - \u003c= 2.23.2",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003e= 2.22.14 - \u003c= 2.23.2 (fixed in 2.23.2)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "2.23.2",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-pro-plugin-2-22-14-2-23-2-broken-access-control-vulnerability"
+      ],
+      "wpvuln_id": "555fd61b91e3a60fca1542a05232f4f87c31869f989ea66a27f947188dd5ebbc"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "a8d84da8-e60c-4851-9fdc-f39e31362f31",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.4",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.4 (fixed in 1.23.4)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cvss_score": "7.1",
+      "cwe": [
+        "CWE-352"
+      ],
+      "fixed_in": "1.23.4",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2023-32960",
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-23-3-csrf-lead-to-wp-admin-site-wide-xss-vulnerability",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-1233-cross-site-request-forgery-to-cross-site-scripting-via-action-authenticate-storage",
+        "https://wpscan.com/vulnerability/eb9f67b9-1956-4485-a007-1eb932288200"
+      ],
+      "wpvuln_id": "7ab828d4e07aee201e295e9b0bd5ae19d79c440787088e1151573f429bdaee97"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "843966e3-a402-4024-91c7-80e799efba87",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.1",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.1 (fixed in 1.23.1)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.23.1",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraft-plus-plugin-1-22-24-sensitive-data-exposure-vulnerability"
+      ],
+      "wpvuln_id": "2924c420eb2771c496e505467f964f82595deffd8943f45f5ee5204533578e90"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "1d6e88c3-a10e-4792-9e1d-2f8f4ad72433",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.11",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.23.11 (fixed in 1.23.11)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cvss_score": "5.4",
+      "cwe": [
+        "CWE-352"
+      ],
+      "fixed_in": "1.23.11",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2023-5982",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-12310-cross-site-request-forgery-to-google-drive-storage-update",
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-23-10-cross-site-request-forgery-to-google-drive-storage-update-vulnerability",
+        "https://wpscan.com/vulnerability/4be35cd3-4a39-4223-8ff4-35b542224b54"
+      ],
+      "wpvuln_id": "a11ef97193aa2adad85090b11b8ff796e3f6252040497333ba25851db106fa1b"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "edd9dd1e-750a-478e-8636-d18bd4d5c678",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.24.12",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.24.12 (fixed in 1.24.12)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "cvss_score": "8.8",
+      "cwe": [
+        "CWE-502"
+      ],
+      "fixed_in": "1.24.12",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2024-10957",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-wp-backup-migration-plugin-12411-unauthenticated-php-object-injection",
+        "https://patchstack.com/database/wordpress/plugin/updraftplus/vulnerability/wordpress-updraftplus-plugin-1-24-11-unauthenticated-php-object-injection-vulnerability"
+      ],
+      "wpvuln_id": "4c9b147c196372527ccf7e94b5952f73cf4e17c80a411ca4485ffb2e364bc161"
+    },
+    "false_positive": false
+  },
+  {
+    "id": "8bedb136-a547-429d-991a-cef2e182e4a2",
+    "name": "[WPVuln] UpdraftPlus: WP Backup \u0026amp; Migration Plugin — UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.25.1",
+    "description": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin [updraftplus] \u003c 1.25.1 (fixed in 1.25.1)",
+    "category": "WordPress Plugin Vulnerability",
+    "location": "https://example.com",
+    "osi_layer": "APPLICATION",
+    "severity": "MEDIUM",
+    "attributes": {
+      "fixed_in": "1.25.1",
+      "plugin_name": "UpdraftPlus: WP Backup \u0026amp; Migration Plugin",
+      "plugin_slug": "updraftplus",
+      "references": [
+        "https://www.cve.org/CVERecord?id=CVE-2025-0215",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/updraftplus/updraftplus-backuprestore-12412-reflected-cross-site-scripting"
+      ],
+      "wpvuln_id": "e52df0e09a48b69fe84dbc912ed1fabee8553e4ebdb43a35d469b30ff7caa0a7"
+    },
+    "false_positive": false
+  }
+]
