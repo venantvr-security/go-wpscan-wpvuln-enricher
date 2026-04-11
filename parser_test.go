@@ -441,6 +441,106 @@ func TestFindingJSONRoundTrip(t *testing.T) {
 }
 
 // =============================================================================
+// Test: runParser with file I/O
+// =============================================================================
+
+func TestRunParserWithFiles(t *testing.T) {
+	// Create temp input file
+	inputFile, err := os.CreateTemp("", "wpscan-input-*.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.Remove(inputFile.Name())
+	inputFile.WriteString(sampleWPScanOutput)
+	inputFile.Close()
+
+	// Create temp output file
+	outputFile, err := os.CreateTemp("", "findings-output-*.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.Remove(outputFile.Name())
+	outputFile.Close()
+
+	// Set environment variables
+	os.Setenv("READ_FILE", inputFile.Name())
+	os.Setenv("WRITE_FILE", outputFile.Name())
+	defer os.Unsetenv("READ_FILE")
+	defer os.Unsetenv("WRITE_FILE")
+
+	// Run parser
+	err = runParser()
+	if err != nil {
+		t.Fatalf("runParser failed: %v", err)
+	}
+
+	// Verify output
+	output, err := os.ReadFile(outputFile.Name())
+	if err != nil {
+		t.Fatalf("Failed to read output: %v", err)
+	}
+
+	var findings []Finding
+	if err := json.Unmarshal(output, &findings); err != nil {
+		t.Fatalf("Failed to parse output: %v", err)
+	}
+
+	if len(findings) < 7 {
+		t.Errorf("Expected at least 7 findings, got %d", len(findings))
+	}
+}
+
+func TestRunParserMissingFile(t *testing.T) {
+	os.Setenv("READ_FILE", "/nonexistent/file.json")
+	defer os.Unsetenv("READ_FILE")
+
+	err := runParser()
+	if err == nil {
+		t.Error("Expected error for missing file")
+	}
+}
+
+// =============================================================================
+// Test: Vulnerability CVSS severity mapping
+// =============================================================================
+
+func TestParseVulnerabilityCVSSSeverity(t *testing.T) {
+	tests := []struct {
+		name     string
+		cvss     float64
+		expected string
+	}{
+		{"Critical CVSS 9.8", 9.8, "HIGH"},
+		{"High CVSS 7.5", 7.5, "HIGH"},
+		{"Medium CVSS 5.0", 5.0, "MEDIUM"},
+		{"Low CVSS 2.5", 2.5, "LOW"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			vuln := WPScanVulnerability{
+				Title: "Test Vuln",
+				CVSS:  &WPScanCVSS{Score: tt.cvss},
+			}
+			finding := parseVulnerability(vuln, "test-plugin", "https://example.com")
+			if finding.Severity != tt.expected {
+				t.Errorf("Expected %s, got %s", tt.expected, finding.Severity)
+			}
+		})
+	}
+}
+
+func TestParseVulnerabilityNoCVSS(t *testing.T) {
+	vuln := WPScanVulnerability{
+		Title: "Test Vuln Without CVSS",
+	}
+	finding := parseVulnerability(vuln, "test-plugin", "https://example.com")
+	if finding.Severity != "MEDIUM" {
+		t.Errorf("Expected MEDIUM for no CVSS, got %s", finding.Severity)
+	}
+}
+
+// =============================================================================
 // Test: Location extraction
 // =============================================================================
 
