@@ -18,7 +18,7 @@ spec:
 
   # ── Image du Hook ────────────────────────────────────────────────────────
   image: ghcr.io/venantvr-security/go-wpscan-wpvuln-enricher:latest
-  # imagePullPolicy: Always   # décommenter en dev/staging
+  imagePullPolicy: Always  # Toujours récupérer la dernière version
   # imagePullSecrets:
   #   - name: ghcr-credentials
 
