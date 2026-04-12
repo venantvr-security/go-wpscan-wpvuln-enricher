@@ -58,10 +58,11 @@ LABEL com.wpvulnerability.api-docs="https://www.wpvulnerability.net/api/plugins/
 # Copier le binaire depuis le stage de build
 COPY --from=builder /work/go-wpscan-wpvuln-enricher /go-wpscan-wpvuln-enricher
 
-# Variables d'environnement par défaut
-# secureCodeBox injecte READ_FILE et WRITE_FILE automatiquement
-ENV READ_FILE=/tmp/findings.json
-ENV WRITE_FILE=/tmp/findings.json
+# secureCodeBox passe les URLs comme arguments de ligne de commande:
+#   argv[1] = URL raw results (download)
+#   argv[2] = URL findings (download)
+#   argv[3] = URL raw results (upload) - pour ReadAndWrite
+#   argv[4] = URL findings (upload) - pour ReadAndWrite
 
 # Point d'entrée - le binaire à exécuter
 ENTRYPOINT ["/go-wpscan-wpvuln-enricher"]

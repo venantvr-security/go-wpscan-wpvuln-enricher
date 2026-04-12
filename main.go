@@ -705,29 +705,41 @@ func main() {
 	}
 
 	// ══════════════════════════════════════════════════════════════════════════
-	// ÉTAPE 2: Lecture des variables d'environnement
-	// secureCodeBox injecte ces variables automatiquement
+	// ÉTAPE 2: Lecture des URLs depuis les arguments de ligne de commande
+	// secureCodeBox passe les URLs comme arguments:
+	//   argv[1] = URL raw results (download)
+	//   argv[2] = URL findings (download)
+	//   argv[3] = URL raw results (upload) - pour ReadAndWrite
+	//   argv[4] = URL findings (upload) - pour ReadAndWrite
 	// ══════════════════════════════════════════════════════════════════════════
-	readFile := os.Getenv("READ_FILE")   // Chemin du fichier JSON d'entrée
-	writeFile := os.Getenv("WRITE_FILE") // Chemin du fichier JSON de sortie
+	if len(os.Args) < 3 {
+		log.Fatal("[ERROR] Usage: hook <raw-results-url> <findings-url> [<raw-upload-url> <findings-upload-url>]")
+	}
 
-	if readFile == "" {
-		log.Fatal("[ERROR] READ_FILE environment variable is not set")
+	findingsDownloadURL := os.Args[2]
+	var findingsUploadURL string
+	if len(os.Args) >= 5 {
+		findingsUploadURL = os.Args[4]
+	}
+
+	log.Printf("[INFO] Findings download URL: %s", findingsDownloadURL)
+	if findingsUploadURL != "" {
+		log.Printf("[INFO] Findings upload URL: %s", findingsUploadURL)
 	}
 
 	// ══════════════════════════════════════════════════════════════════════════
-	// ÉTAPE 3: Lecture et parsing du fichier de findings WPScan
+	// ÉTAPE 3: Téléchargement et parsing des findings
 	// ══════════════════════════════════════════════════════════════════════════
-	raw, err := os.ReadFile(readFile)
+	raw, err := downloadFromURL(findingsDownloadURL)
 	if err != nil {
-		log.Fatalf("[ERROR] Cannot read findings file %s: %v", readFile, err)
+		log.Fatalf("[ERROR] Cannot download findings: %v", err)
 	}
 
 	var findings []Finding
 	if err := json.Unmarshal(raw, &findings); err != nil {
 		log.Fatalf("[ERROR] Cannot parse findings JSON: %v", err)
 	}
-	log.Printf("[INFO] Loaded %d finding(s) from %s", len(findings), readFile)
+	log.Printf("[INFO] Loaded %d finding(s) from storage", len(findings))
 
 	// ══════════════════════════════════════════════════════════════════════════
 	// ÉTAPE 4: Extraction des slugs de plugins
@@ -735,7 +747,7 @@ func main() {
 	slugs := extractPluginSlugs(findings)
 	if len(slugs) == 0 {
 		log.Println("[INFO] No WordPress plugin findings detected — nothing to enrich")
-		writeOutput(findings, writeFile)
+		writeOutput(findings, findingsUploadURL)
 		return // Sortir de main() - le programme se termine
 	}
 	log.Printf("[INFO] Plugins to check: %v", slugs)
@@ -798,15 +810,65 @@ func main() {
 	// ══════════════════════════════════════════════════════════════════════════
 	// append(a, b...) concatène deux slices
 	merged := append(findings, enriched...)
-	writeOutput(merged, writeFile)
+	writeOutput(merged, findingsUploadURL)
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// TÉLÉCHARGEMENT DEPUIS URL (pour secureCodeBox)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// downloadFromURL télécharge le contenu d'une URL
+func downloadFromURL(url string) ([]byte, error) {
+	resp, err := httpClient.Get(url)
+	if err != nil {
+		return nil, fmt.Errorf("HTTP GET failed: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("HTTP GET returned status %d", resp.StatusCode)
+	}
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, fmt.Errorf("reading response body: %w", err)
+	}
+
+	return body, nil
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// UPLOAD VERS URL (pour secureCodeBox)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// uploadToURL envoie le contenu vers une URL via HTTP PUT
+func uploadToURL(url string, data []byte) error {
+	req, err := http.NewRequest(http.MethodPut, url, strings.NewReader(string(data)))
+	if err != nil {
+		return fmt.Errorf("creating PUT request: %w", err)
+	}
+	req.Header.Set("Content-Type", "")
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return fmt.Errorf("HTTP PUT failed: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		body, _ := io.ReadAll(resp.Body)
+		return fmt.Errorf("HTTP PUT returned status %d: %s", resp.StatusCode, string(body))
+	}
+
+	return nil
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ÉCRITURE DU RÉSULTAT
 // ═══════════════════════════════════════════════════════════════════════════════
 
-// writeOutput écrit les findings en JSON dans un fichier ou sur stdout.
-func writeOutput(findings []Finding, writeFile string) {
+// writeOutput écrit les findings en JSON vers une URL ou sur stdout.
+func writeOutput(findings []Finding, uploadURL string) {
 	// MarshalIndent génère du JSON formaté (lisible)
 	// "" = pas de préfixe, "  " = indentation de 2 espaces
 	out, err := json.MarshalIndent(findings, "", "  ")
@@ -814,15 +876,16 @@ func writeOutput(findings []Finding, writeFile string) {
 		log.Fatalf("[ERROR] Cannot marshal output findings: %v", err)
 	}
 
-	if writeFile != "" {
-		// Écrire dans le fichier spécifié
-		// 0644 = permissions Unix (lecture/écriture pour le propriétaire, lecture pour les autres)
-		if err := os.WriteFile(writeFile, out, 0644); err != nil {
-			log.Fatalf("[ERROR] Cannot write to %s: %v", writeFile, err)
+	if uploadURL != "" {
+		// Upload vers l'URL spécifiée (MinIO via secureCodeBox)
+		log.Printf("[INFO] Uploading %d finding(s) to storage...", len(findings))
+		if err := uploadToURL(uploadURL, out); err != nil {
+			log.Fatalf("[ERROR] Cannot upload findings: %v", err)
 		}
-		log.Printf("[INFO] Results written to %s (%d finding(s) total)", writeFile, len(findings))
+		log.Printf("[INFO] Results uploaded successfully (%d finding(s) total)", len(findings))
 	} else {
 		// Fallback: écrire sur la sortie standard
+		log.Printf("[INFO] No upload URL provided, writing to stdout")
 		fmt.Println(string(out))
 	}
 }
