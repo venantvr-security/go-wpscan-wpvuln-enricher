@@ -486,17 +486,34 @@ func runParser() error {
 	log.SetFlags(log.Ltime)
 	log.Println("[INFO] WPScan Parser v1.0.0 starting...")
 
-	// Lire l'entrée
-	readFile := os.Getenv("READ_FILE")
 	var raw []byte
 	var err error
+	var uploadURL string
 
-	if readFile != "" {
-		log.Printf("[INFO] Reading from file: %s", readFile)
-		raw, err = os.ReadFile(readFile)
+	// Mode secureCodeBox: URLs passées en arguments
+	// argv[1] = URL de téléchargement des résultats bruts
+	// argv[2] = URL d'upload des findings
+	if len(os.Args) >= 3 && strings.HasPrefix(os.Args[1], "http") {
+		rawResultsURL := os.Args[1]
+		uploadURL = os.Args[2]
+		log.Printf("[INFO] secureCodeBox mode detected")
+		log.Printf("[INFO] Raw results URL: %s", rawResultsURL[:min(100, len(rawResultsURL))]+"...")
+		log.Printf("[INFO] Findings upload URL: %s", uploadURL[:min(100, len(uploadURL))]+"...")
+
+		raw, err = downloadFromURL(rawResultsURL)
+		if err != nil {
+			return fmt.Errorf("failed to download raw results: %w", err)
+		}
 	} else {
-		log.Println("[INFO] Reading from stdin...")
-		raw, err = io.ReadAll(os.Stdin)
+		// Mode standalone: lecture depuis fichier ou stdin
+		readFile := os.Getenv("READ_FILE")
+		if readFile != "" {
+			log.Printf("[INFO] Reading from file: %s", readFile)
+			raw, err = os.ReadFile(readFile)
+		} else {
+			log.Println("[INFO] Reading from stdin...")
+			raw, err = io.ReadAll(os.Stdin)
+		}
 	}
 
 	if err != nil {
@@ -506,6 +523,8 @@ func runParser() error {
 	if len(raw) == 0 {
 		return fmt.Errorf("empty input")
 	}
+
+	log.Printf("[INFO] Received %d bytes of raw results", len(raw))
 
 	// Parser
 	log.Println("[INFO] Parsing WPScan results...")
@@ -522,18 +541,35 @@ func runParser() error {
 		return fmt.Errorf("failed to marshal findings: %w", err)
 	}
 
-	writeFile := os.Getenv("WRITE_FILE")
-	if writeFile != "" {
-		log.Printf("[INFO] Writing to file: %s", writeFile)
-		if err := os.WriteFile(writeFile, output, 0644); err != nil {
-			return fmt.Errorf("failed to write output: %w", err)
+	// Mode secureCodeBox: upload vers MinIO
+	if uploadURL != "" {
+		log.Println("[INFO] Uploading findings to storage...")
+		if err := uploadToURL(uploadURL, output); err != nil {
+			return fmt.Errorf("failed to upload findings: %w", err)
 		}
+		log.Printf("[INFO] Successfully uploaded %d finding(s)", len(findings))
 	} else {
-		fmt.Println(string(output))
+		// Mode standalone: écriture fichier ou stdout
+		writeFile := os.Getenv("WRITE_FILE")
+		if writeFile != "" {
+			log.Printf("[INFO] Writing to file: %s", writeFile)
+			if err := os.WriteFile(writeFile, output, 0644); err != nil {
+				return fmt.Errorf("failed to write output: %w", err)
+			}
+		} else {
+			fmt.Println(string(output))
+		}
 	}
 
 	log.Println("[INFO] Parser completed successfully")
 	return nil
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
 
 // Pour exécuter en mode parser (si appelé avec --parser ou si PARSER_MODE=true)
