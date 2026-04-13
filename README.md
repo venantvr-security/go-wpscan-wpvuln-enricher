@@ -273,13 +273,15 @@ flowchart TD
 ```
 .
 ├── main.go                 # Main application code (commented for beginners)
-├── main_test.go            # Unit tests (15 tests)
 ├── go.mod                  # Go module definition
 ├── Dockerfile              # Multi-stage Docker build (Chainguard, 0 CVE)
 ├── hook.yaml               # secureCodeBox hook manifest
 ├── README.md               # This file
-├── DOCKER.md               # Docker commands cheat sheet
-├── .gitignore              # Git ignore rules
+├── docs/
+│   └── DOCKER.md           # Docker commands cheat sheet
+├── tests/
+│   ├── main_test.go        # Unit tests (15 tests)
+│   └── parser_test.go      # Parser unit tests
 ├── examples/
 │   ├── wpscan-findings.json           # Sample WPScan input
 │   └── wpvulnerability-api-response.json  # Sample API response
