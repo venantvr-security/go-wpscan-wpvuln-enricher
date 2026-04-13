@@ -17,8 +17,13 @@ WORKDIR /work
 # Note: pas de go.sum car aucune dépendance externe
 COPY go.mod ./
 
-# Copier le code source
+# Copier le code source et les tests
 COPY main.go parser.go ./
+COPY tests/main_test.go tests/parser_test.go ./
+
+# Exécuter les tests unitaires pendant le build
+# Si un test échoue, le build échoue (fail-fast)
+RUN go test -v ./...
 
 # Compiler le binaire
 # CGO_ENABLED=0 : pas de dépendance à la libc (binaire statique)
